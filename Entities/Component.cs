@@ -1,0 +1,20 @@
+namespace APBD_PC_Components_API.Entities;
+
+public class Component
+{
+    public string Code { get; set; } = null!;
+
+    public string Name { get; set; } = null!;
+
+    public string Description { get; set; } = null!;
+
+    public int ComponentManufacturersId { get; set; }
+
+    public int ComponentTypesId { get; set; }
+
+    public ComponentManufacturer ComponentManufacturer { get; set; } = null!;
+
+    public ComponentType ComponentType { get; set; } = null!;
+
+    public ICollection<PCComponent> PCComponents { get; set; } = new List<PCComponent>();
+}
