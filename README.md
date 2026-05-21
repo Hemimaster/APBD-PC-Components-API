@@ -231,8 +231,12 @@ dotnet ef database update
 dotnet run
 ```
 
-Domyślny adres aplikacji:
+Adres aplikacji po uruchomieniu jest widoczny w konsoli, np.:
 
+```txt
+http://localhost:5136
+```
+W testach należy użyć adresu oraz portu wyświetlonego po uruchomieniu aplikacji, np.:
 ```txt
 http://localhost:5136
 ```
@@ -262,6 +266,7 @@ Sprawdzone statusy HTTP:
 - `201 Created`
 - `204 No Content`
 - `404 Not Found`
-
+- `400 BAD Request`
+  
 ## Autor
 #### Grzegorz Wojewódzki
