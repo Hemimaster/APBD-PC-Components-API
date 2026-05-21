@@ -44,7 +44,7 @@ public class PCsController : ControllerBase
     {
         var pc = await _pcService.CreatePCAsync(request);
 
-        return CreatedAtAction(nameof(GetPCComponentsAsync), new { id = pc.Id }, pc);
+        return Created($"api/pcs/{pc.Id}", pc);
     }
 
     [HttpPut("{id:int}")]
