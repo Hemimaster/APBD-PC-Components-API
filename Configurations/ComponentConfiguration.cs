@@ -36,5 +36,34 @@ public class ComponentConfiguration : IEntityTypeConfiguration<Component>
         builder.HasOne(e => e.ComponentType)
             .WithMany(e => e.Components)
             .HasForeignKey(e => e.ComponentTypesId);
+        
+        builder.HasData(
+            new Component
+            {
+                Code = "CPU0000001",
+                Name = "AMD Ryzen 7 7800X3D",
+                Description = "High performance desktop processor",
+                ComponentManufacturersId = 1,
+                ComponentTypesId = 1
+            },
+            new Component
+            {
+                Code = "GPU0000001",
+                Name = "NVIDIA GeForce RTX 4070",
+                Description = "Graphics card for gaming and creative workloads",
+                ComponentManufacturersId = 2,
+                ComponentTypesId = 2
+            },
+            new Component
+            {
+                Code = "RAM0000001",
+                Name = "Corsair Vengeance 32GB DDR5",
+                Description = "DDR5 memory kit for desktop computers",
+                ComponentManufacturersId = 3,
+                ComponentTypesId = 3
+            }
+        );
     }
+    
+    
 }

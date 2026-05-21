@@ -22,5 +22,26 @@ public class ComponentTypeConfiguration : IEntityTypeConfiguration<ComponentType
         builder.Property(e => e.Name)
             .HasMaxLength(150)
             .IsRequired();
+        
+        builder.HasData(
+            new ComponentType
+            {
+                Id = 1,
+                Abbreviation = "CPU",
+                Name = "Processor"
+            },
+            new ComponentType
+            {
+                Id = 2,
+                Abbreviation = "GPU",
+                Name = "Graphics Card"
+            },
+            new ComponentType
+            {
+                Id = 3,
+                Abbreviation = "RAM",
+                Name = "Memory"
+            }
+        );
     }
 }
